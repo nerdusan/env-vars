@@ -25,4 +25,6 @@ workflows:
   print-name-wf:
     jobs:
       - save-hello-world-output
-      - print-output-file
+      - print-output-file:
+          requires:
+            - save-hello-world-output
