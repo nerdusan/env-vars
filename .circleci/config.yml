@@ -5,7 +5,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - persist_to_workspace:
-          root: /tmp/workspace
+          root: ~/ 
           paths:
             - output.txt
             - build/*
@@ -17,7 +17,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - attach_workspace:
-          at: /tmp/workspace
+          at: ~/
       - run:
           name: "save text to output"
           command: cat output.txt
